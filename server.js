@@ -168,6 +168,7 @@ app.use((err, req, res, next) => {
   if (err && err.message === "Origin not allowed by CORS") return res.status(403).json({ error: "Origin not allowed." });
   console.error(err);
   res.status(500).json({ error: "Unexpected server error." });
-});
-app.listen(PORT, () => console.log(`EarnSmart API listening on port ${PORT}`));
+  if (require.main === module) {
+  app.listen(PORT, () => console.log(`EarnSmart API on ${PORT}`));
+}
 module.exports = app;
