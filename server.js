@@ -170,3 +170,4 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Unexpected server error." });
 });
 app.listen(PORT, () => console.log(`EarnSmart API listening on port ${PORT}`));
+module.exports = app;
